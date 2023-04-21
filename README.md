@@ -1,1 +1,2 @@
 # -Assign-04-HTML-Timbits
+[![GitHub's Super Linter](https://github.com/ICS20-Programming-SavyonM/-Assign-04-HTML-Timbits/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/ICS20-Programming-SavyonM/-Assign-04-HTML-Timbits/actions)
