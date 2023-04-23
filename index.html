@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Timbits Order Form</title>
-  </head>
-  <body>
-    <h1>Timbits Order Form</h1>
-    <form id="orderForm">
-      <label for="timbitsPack">Choose your Timbits pack:</label>
-      <select id="timbitsPack">
-        <br>
-        <option value="10">10-pack - $3.99</option>
-        <option value="20">20-pack - $4.99</option>
-        <option value="50">50-pack - $9.99</option>
-      </select>
-      <br></br>
-      <label for="toppings">Choose your Timbits toppings:</label>
-      <select id="toppings">
-        <br></br>
-        <option value="0">No toppings</option>
-        <option value="0.02">Chocolate - $0.02 per Timbit</option>
-        <option value="0.01">Sprinkles - $0.01 per Timbit</option>
-        <option value="0.02">Strawberry Jam - $0.02 per Timbit</option>
-        <option value="0.01">Caramel Sauce - $0.01 per Timbit</option>
-      </select>
-      <br></br>
-      <label for="coffeeSize">Choose your coffee size:</label>
-      <select id="coffeeSize">
-        <br>
-        <option value="1.59">Small - $1.59</option>
-        <option value="1.79">Medium - $1.79</option>
-        <option value="1.99">Large - $1.99</option>
-      </select>
-      <br></br>
-      <button type="button" onclick="calculateCost()">Submit Order</button>
-    </form>
-    <div id="orderSummary"></div>
-    <div id="orderTotal"></div>
-  </body>
-  <script src="./js/script.js"></script>
-</html>
+<head>
+   <!--metadata--> 
+    <meta charset="utf-8">
+    <meta name="description" content="User Input, with JavaScript">
+    <meta name="keywords" content="immaculata, ics2o">
+    <meta name="author" content="Savyon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Cube Calculator</title>
+    <!--For favicon on page--> 
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png" />
+    <link rel="manifest" href="./fav_index/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+	<title>Timbits Order Form</title>
+	<script src="script.js"></script>
+</head>
+<body>
+	<h1>Timbits Order Form</h1>
+	<p>Select your order:</p>
+
+	<label for="timbits">Timbits pack:</label>
+	<select id="timbits" onchange="calculateTotal()">
+		<option value="3.99">10 pack ($3.99)</option>
+		<option value="4.99">20 pack ($4.99)</option>
+		<option value="9.99">50 pack ($9.99)</option>
+	</select>
+
+	<br>
+
+	<label for="toppings">Toppings:</label>
+	<select id="toppings" onchange="calculateTotal()">
+		<option value="0">No toppings</option>
+		<option value="0.02">Chocolate ($0.02 per Timbit)</option>
+		<option value="0.01">Sprinkles ($0.01 per Timbit)</option>
+		<option value="0.02">Strawberry jam ($0.02 per Timbit)</option>
+		<option value="0.01">Caramel sauce ($0.01 per Timbit)</option>
+	</select>
+
+	<br>
+
+	<label for="coffee">Coffee size:</label>
+	<select id="coffee" onchange="calculateTotal()">
+		<option value="1.59">Small ($1.59)</option>
+		<option value="1.79">Medium ($1.79)</option>
+		<option value="1.99">Large ($1.99)</option>
+	</select>
+
+	<br>
+
+	<button onclick="submitOrder()">Submit Order</button>
+
+	<br>
+
+	<p>Subtotal: <span id="subtotal"></span></p>
+	<p>Total cost (including tax): <span id="total"></span></p>
+
+	<br>
+
+	<p>Summary:</p>
+	<ul id="summary"></ul>
+  <script src = "./js/script.js"
+</body>
+  </html>

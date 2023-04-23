@@ -1,24 +1,28 @@
-function calculateCost() {
-  const timbitsPack = document.getElementById("timbitsPack").value;
-  const toppings = document.querySelectorAll('input[name="toppings"]:checked');
-  const coffeeSize = document.getElementById("coffeeSize").value;
+function calculateTotal() {
+	// Get the selected values from the dropdown menus
+	var timbits = document.getElementById("timbits").value;
+	var toppings = document.getElementById("toppings").value;
+	var coffee = document.getElementById("coffee").value;
 
-  let toppingsCost = 0;
-  toppings.forEach((topping) => {
-    const toppingCost = parseFloat(topping.value);
-    toppingsCost += toppingCost;
-  });
+	// Calculate the subtotal and total cost
+	var subtotal = (timbits * 1) + (timbits * toppings) + (coffee * 1);
+	var total = subtotal * 1.13;
 
-  const timbitsCost = parseFloat(timbitsPack) * (toppingsCost + 0.01);
-  const coffeeCost = parseFloat(coffeeSize);
-  const subtotal = timbitsCost + coffeeCost;
-  const tax = 0.13 * subtotal;
-  const total = subtotal + tax;
+	// Update the display
+	document.getElementById("subtotal").innerHTML = "$" + subtotal.toFixed(2);
+	document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+}
 
-  const orderSummary = `Your order: ${timbitsPack} Timbits with ${toppings.length} toppings and a ${coffeeSize} coffee`;
-  const subtotalDisplay = `Subtotal: $${subtotal.toFixed(2)}`;
-  const totalDisplay = `Total (including tax): $${total.toFixed(2)}`;
+function submitOrder() {
+	// Get the selected values from the dropdown menus
+	var timbits = document.getElementById("timbits").value;
+	var toppings = document.getElementById("toppings").options[document.getElementById("toppings").selectedIndex].text;
+	var coffee = document.getElementById("coffee").options[document.getElementById("coffee").selectedIndex].text;
 
-  document.getElementById("orderSummary").textContent = orderSummary;
-  document.getElementById("orderTotal").textContent = `${subtotalDisplay}\n${totalDisplay}`;
+	// Create a summary of the order
+	var summary = "<li>" + timbits + " Timbits with " + toppings + "</li>";
+	summary += "<li>" + coffee + "</li>";
+
+	// Update the display
+	document.getElementById("summary").innerHTML = summary;
 }
