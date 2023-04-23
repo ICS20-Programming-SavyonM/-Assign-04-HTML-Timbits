@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Timbits Order</title>
-</head>
-<body>
-	<h1>Timbits Order Form</h1>
-	<form>
-		
-		<label for="pack">Pack:</label>
-		<select id="pack" name="pack">
-			<option value="10">10 Timbits - $3.19</option>
-			<option value="20">20 Timbits - $4.99</option>
-			<option value="50">50 Timbits - $9.99</option>
-		</select><br><br>
-
-		<label for="toppings">Toppings:</label><br>
-		<input type="checkbox" id="chocolate" name="toppings" value="chocolate">
-		<label for="chocolate">Chocolate - $0.02/timbit</label><br>
-		<input type="checkbox" id="sprinkles" name="toppings" value="sprinkles">
-		<label for="sprinkles">Sprinkles - $0.01/timbit</label><br>
-		<input type="checkbox" id="jam" name="toppings" value="jam">
-		<label for="jam">Strawberry Jam - $0.02/timbit</label><br>
-		<input type="checkbox" id="caramel" name="toppings" value="caramel">
-		<label for="caramel">Caramel Sauce - $0.01/timbit</label><br><br>
-
-		<label for="coffee">Coffee:</label>
-		<select id="coffee" name="coffee">
-			<option value="1.59">Small - $1.59</option>
-			<option value="1.79">Medium - $1.79</option>
-			<option value="1.99">Large - $1.99</option>
-		</select><br><br>
-
-		<button type="button" onclick="calculateOrder()">Calculate Order</button>
-	</form>
-
-  <!--display order summary back to user-->
-	<div id="orderSummary">
-
-	<script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Timbits Order Form</title>
+  </head>
+  <body>
+    <h1>Timbits Order Form</h1>
+    <form id="orderForm">
+      <label for="timbitsPack">Choose your Timbits pack:</label>
+      <select id="timbitsPack">
+        <br>
+        <option value="10">10-pack - $3.99</option>
+        <option value="20">20-pack - $4.99</option>
+        <option value="50">50-pack - $9.99</option>
+      </select>
+      <br></br>
+      <label for="toppings">Choose your Timbits toppings:</label>
+      <select id="toppings">
+        <br></br>
+        <option value="0">No toppings</option>
+        <option value="0.02">Chocolate - $0.02 per Timbit</option>
+        <option value="0.01">Sprinkles - $0.01 per Timbit</option>
+        <option value="0.02">Strawberry Jam - $0.02 per Timbit</option>
+        <option value="0.01">Caramel Sauce - $0.01 per Timbit</option>
+      </select>
+      <br></br>
+      <label for="coffeeSize">Choose your coffee size:</label>
+      <select id="coffeeSize">
+        <br>
+        <option value="1.59">Small - $1.59</option>
+        <option value="1.79">Medium - $1.79</option>
+        <option value="1.99">Large - $1.99</option>
+      </select>
+      <br></br>
+      <button type="button" onclick="calculateCost()">Submit Order</button>
+    </form>
+    <div id="orderSummary"></div>
+    <div id="orderTotal"></div>
+  </body>
+  <script src="./js/script.js"></script>
 </html>
