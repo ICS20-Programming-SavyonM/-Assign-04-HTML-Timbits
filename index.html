@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <!--metadata--> 
+   <!--metadata-->
     <meta charset="utf-8">
     <meta name="description" content="User Input, with JavaScript">
     <meta name="keywords" content="immaculata, ics2o">
     <meta name="author" content="Savyon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Cube Calculator</title>
-    <!--For favicon on page--> 
-    <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
+    
+    <!--for favicon on this page-->
+   <link rel="apple-touch-icon" sizes="180x180" href="./fav_index/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./fav_index/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./fav_index/favicon-16x16.png" />
     <link rel="manifest" href="./fav_index/site.webmanifest" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <!--Style on this page-->
+    <link rel="stylesheet" href="./css/style.css">
+  
 	<title>Timbits Order Form</title>
-	<script src="script.js"></script>
+  <!--link to script.js-->
+	<script src="./js/script.js"></script>
 </head>
 <body>
 	<h1>Timbits Order Form</h1>
+
+ <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Timbits</th>
+      <th>Toppings</th>
+      <th>Coffee Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">10-Pack</td>
+      <td>Chocolate</td>
+      <td>Small</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
+      <td>Sprinkles</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">50-Pack</td>
+      <td>Strawberry Jam</td>
+      <td>Large</td>
+    </tr>
+ <tr>
+      <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
+      <td>Caramel Sauce</td>
+    </tr>
+  </tbody>
+</table>
 	<p>Select your order:</p>
 
 	<label for="timbits">Timbits pack:</label>
@@ -28,7 +64,7 @@
 		<option value="9.99">50 pack ($9.99)</option>
 	</select>
 
-	<br>
+	<br></br>
 
 	<label for="toppings">Toppings:</label>
 	<select id="toppings" onchange="calculateTotal()">
@@ -39,7 +75,7 @@
 		<option value="0.01">Caramel sauce ($0.01 per Timbit)</option>
 	</select>
 
-	<br>
+	<br></br>
 
 	<label for="coffee">Coffee size:</label>
 	<select id="coffee" onchange="calculateTotal()">
@@ -48,7 +84,7 @@
 		<option value="1.99">Large ($1.99)</option>
 	</select>
 
-	<br>
+	<br></br>
 
 	<button onclick="submitOrder()">Submit Order</button>
 
@@ -60,7 +96,12 @@
 	<br>
 
 	<p>Summary:</p>
-	<ul id="summary"></ul>
+<p><ul id="summary"></ul></p>
+  
+   <!--image on this page-->
+	<img src="./images/timbits.jpg" alt="timbits" height = "500" width="600">
+
+  
   <script src = "./js/script.js"
 </body>
-  </html>
+ 
