@@ -18,12 +18,12 @@
     <!--Style on this page-->
     <link rel="stylesheet" href="./css/style.css">
   
-	<title>Timbits Order Form</title>
+	<title>Tim Hortons</title>
   <!--link to script.js-->
 	<script src="./js/script.js"></script>
 </head>
 <body>
-	<h1>Timbits Order Form</h1>
+	<h1>Timbits and Coffee</h1>
 
  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
   <thead>
@@ -79,14 +79,14 @@
 
 	<label for="coffee">Coffee size:</label>
 	<select id="coffee" onchange="calculateTotal()">
-		<option value="1.59">Small ($1.59)</option>
-		<option value="1.79">Medium ($1.79)</option>
-		<option value="1.99">Large ($1.99)</option>
+		<option value="1.59">Small coffee ($1.59)</option>
+		<option value="1.79">Medium coffee ($1.79)</option>
+		<option value="1.99">Large coffee ($1.99)</option>
 	</select>
 
 	<br></br>
 
-	<button onclick="submitOrder()">Submit Order</button>
+	<button onclick="submitOrder()">Order</button>
 
 	<br>
 
@@ -95,13 +95,10 @@
 
 	<br>
 
-	<p>Summary:</p>
-<p><ul id="summary"></ul></p>
+	<p>Your Order:</p>
+<ul id="summary"></ul>
   
    <!--image on this page-->
 	<img src="./images/timbits.jpg" alt="timbits" height = "500" width="600">
 
   
-  <script src = "./js/script.js"
-</body>
- 
