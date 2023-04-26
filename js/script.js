@@ -13,13 +13,14 @@ function calculateTotal() {
 	// Get the selected values from the dropdown menus
 	let timbits = document.getElementById("timbits").value;
 	let toppings = document.getElementById("toppings").value;
+  let Secondtoppings = document.getElementById("Secondtoppings").value;
 	let coffee = document.getElementById("coffee").value;
 
 	// Calculate the subtotal and total cost
-	let subtotal = (timbits * 1) + (timbits * toppings) + (coffee * 1);
+	let subtotal = (timbits * 1) + (timbits * toppings * Secondtoppings) + (coffee * 1);
 	let total = subtotal * 1.13;
 
-	// Update the display each time the 
+	// Update the display each time the user selects something
 	document.getElementById("subtotal").innerHTML = "$" + subtotal.toFixed(2);
 	document.getElementById("total").innerHTML = "$" + total.toFixed(2);
 }
@@ -28,10 +29,11 @@ function submitOrder() {
 	// Get the selected values from the dropdown menus
 	let timbits = document.getElementById("timbits").value;
 	let toppings = document.getElementById("toppings").options[document.getElementById("toppings").selectedIndex].text;
-	let coffee = document.getElementById("coffee").options[document.getElementById("coffee").selectedIndex].text;
+  let Secondtoppings = document.getElementById("Secondtoppings").options[document.getElementById("Secondtoppings").selectedIndex].text;
+  let coffee = document.getElementById("coffee").options[document.getElementById("coffee").selectedIndex].text;
 
 	// Create a summary of the order
-	let summary = "<li>" + timbits + " Timbits with " + toppings + "</li>";
+	let summary = "<li>" + timbits + " Timbits with " + toppings + "<br>" + Secondtoppings + "</li>";
 	summary += "<li>" + coffee + "</li>";
 
 	// Update the display
