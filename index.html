@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
    <!--metadata-->
     <meta charset="utf-8">
     <meta name="description" content="User Input, with JavaScript">
@@ -17,97 +18,96 @@
     
     <!--Style on this page-->
     <link rel="stylesheet" href="./css/style.css">
-  
-	<title>Tim Hortons</title>
-  <!--link to script.js-->
-	<script src="./js/script.js"></script>
+
+    <title>Tim Hortons</title>
+
+    <!--link to script.js-->
+    <script src="./js/script.js"></script>
 </head>
 <body>
-	<h1>Timbits and Coffee</h1>
+    <h1>Timbits and Coffee</h1>
 
- <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Timbits</th>
-      <th>Toppings</th>
-      <th>Coffee Size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">10-Pack</td>
-      <td>Chocolate</td>
-      <td>Small</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
-      <td>Sprinkles</td>
-      <td>Medium</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">50-Pack</td>
-      <td>Strawberry Jam</td>
-      <td>Large</td>
-    </tr>
- <tr>
-      <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
-      <td>Caramel Sauce</td>
-    </tr>
-  </tbody>
-</table>
-	<p>Select your order:</p>
+  <!--MDL component: Table-->
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Timbits</th>
+                <th>Toppings</th>
+                <th>Coffee Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">10-Pack</td>
+                <td>Chocolate</td>
+                <td>Small</td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
+                <td>Sprinkles</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">50-Pack</td>
+                <td>Strawberry Jam</td>
+                <td>Large</td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">20-Pack</td>
+                <td>Caramel Sauce</td>
+            </tr>
+        </tbody>
+    </table>
+  <p>Select your order:</p>
 
-	<label for="timbits">Timbits pack:</label>
-	<select id="timbits" onchange="calculateTotal()">
-		<option value="3.99">10 pack ($3.99)</option>
-		<option value="4.99">20 pack ($4.99)</option>
-		<option value="9.99">50 pack ($9.99)</option>
-	</select>
+  <!--Area for user to enter order-->
+    <label for="timbits">Timbits pack:</label>
+    <select id="timbits" onchange="calculateTotal()">
+        <option value="3.19">10 pack ($3.19)</option>
+        <option value="4.99">20 pack ($4.99)</option>
+        <option value="9.99">50 pack ($9.99)</option>
+    </select>
 
-	<br></br>
+    <br><br>
 
-	<label for="toppings">Toppings:</label>
-	<select id="toppings" onchange="calculateTotal()">
-		<option value="0">No toppings</option>
-		<option value="0.02">Chocolate ($0.02 per Timbit)</option>
-		<option value="0.01">Sprinkles ($0.01 per Timbit)</option>
-		<option value="0.02">Strawberry jam ($0.02 per Timbit)</option>
-		<option value="0.01">Caramel sauce ($0.01 per Timbit)</option>
-	</select>
+    <label for="toppings">Choose your toppings:</label>
+    <select id="toppings" name="toppings[]" multiple>
+        <option value="0.02">Chocolate - $0.02</option>
+        <option value="0.02">Sprinkles - $0.02</option>
+        <option value="0.02">Strawberry Jam - $0.02</option>
+        <option value="0.02">Caramel Sauce - $0.02</option>
+    </select><br><br>
 
-  <label for="Secondtoppings">Extra topping:</label>
-	<select id="Secondtoppings" onchange="calculateTotal()">
-		<option value="0"> No extra toppings</option>
-		<option value="0.02"> Chocolate ($0.02 per Timbit)</option>
-		<option value="0.01"> Sprinkles ($0.01 per Timbit)</option>
-		<option value="0.02"> Strawberry jam ($0.02 per Timbit)</option>
-		<option value="0.01"> Caramel sauce ($0.01 per Timbit)</option>
-	</select>
+    <label for="Secondtoppings">Extra topping:</label>
+    <select id="Secondtoppings" name="Secondtoppings[]" multiple>
+        <option value="0.02">Chocolate - $0.02</option>
+        <option value="0.02">Sprinkles - $0.02</option>
+        <option value="0.02">Strawberry Jam - $0.02</option>
+        <option value="0.02">Caramel Sauce - $0.02
 
-	<br></br>
+                  </select><br><br>
 
-	<label for="coffee">Coffee size:</label>
-	<select id="coffee" onchange="calculateTotal()">
-		<option value="1.59">Small coffee ($1.59)</option>
-		<option value="1.79">Medium coffee ($1.79)</option>
-		<option value="1.99">Large coffee ($1.99)</option>
-	</select>
+    <label for="coffee">Coffee size:</label>
+    <select id="coffee" onchange="calculateTotal()">
+        <option value="1.59">Small coffee ($1.59)</option>
+        <option value="1.79">Medium coffee ($1.79)</option>
+        <option value="1.99">Large coffee ($1.99)</option>
+    </select>
 
-	<br></br>
+    <br><br>
 
-	<button onclick="submitOrder()">Order</button>
+  <!--Display order when button clicked-->
+    <button onclick="submitOrder()">Order</button>
 
-	<br>
+    <br>
 
-	<p>Subtotal: <span id="subtotal"></span></p>
-	<p>Total cost (including tax): <span id="total"></span></p>
+    <p>Subtotal: <span id="subtotal"></span></p>
+    <p>Total cost (including tax): <span id="total"></span></p>
 
-	<br>
+    <br>
 
-	<p>Your Order:</p>
-<ul id="summary"></ul>
-  
+    <p>Your Order:</p>
+    <ul id="summary"></ul>
+
    <!--image on this page-->
 	<img src="./images/timbits.jpg" alt="timbits" height = "500" width="600">
-
-  

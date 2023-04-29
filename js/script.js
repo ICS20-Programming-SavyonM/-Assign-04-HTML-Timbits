@@ -9,33 +9,56 @@
 /**
  * This function displays what the user has ordered and the total cost
  */
-function calculateTotal() {
-	// Get the selected values from the dropdown menus
-	let timbits = document.getElementById("timbits").value;
-	let toppings = document.getElementById("toppings").value;
-  let Secondtoppings = document.getElementById("Secondtoppings").value;
-	let coffee = document.getElementById("coffee").value;
+   function calculateTotal() {
+    // Retrieve the selected values from the dropdowns
+    let timbitsPrice = parseFloat(document.getElementById("timbits").value);
+    let coffeePrice = parseFloat(document.getElementById("coffee").value);
+    let toppings = document.getElementById("toppings").selectedOptions;
+    let secondToppings = document.getElementById("Secondtoppings").selectedOptions;
 
-	// Calculate the subtotal and total cost
-	let subtotal = (timbits * 1) + (timbits * toppings * Secondtoppings) + (coffee * 1);
-	let total = subtotal * 1.13;
+    let toppingsTotal = 0;
+    let secondToppingsTotal = 0;
 
-	// Update the display each time the user selects something
-	document.getElementById("subtotal").innerHTML = "$" + subtotal.toFixed(2);
-	document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+    // Calculate the total cost for selected toppings
+    for (let i = 0; i < toppings.length; i++) {
+        toppingsTotal += parseFloat(toppings[i].value);
+    }
+
+    // Calculate the total cost for selected second toppings
+    for (let j = 0; j < secondToppings.length; j++) {
+        secondToppingsTotal += parseFloat(secondToppings[j].value);
+    }
+
+    // Calculate the subtotal and total cost
+    let subtotal = timbitsPrice + coffeePrice + toppingsTotal + secondToppingsTotal;
+    let total = subtotal * 1.13; // Add 13% tax
+
+    // Update the display with dollar signs
+    document.getElementById("subtotal").textContent = "$" + subtotal.toFixed(2);
+    document.getElementById("total").textContent = "$" + total.toFixed(2);
 }
 
 function submitOrder() {
-	// Get the selected values from the dropdown menus
-	let timbits = document.getElementById("timbits").value;
-	let toppings = document.getElementById("toppings").options[document.getElementById("toppings").selectedIndex].text;
-  let Secondtoppings = document.getElementById("Secondtoppings").options[document.getElementById("Secondtoppings").selectedIndex].text;
-  let coffee = document.getElementById("coffee").options[document.getElementById("coffee").selectedIndex].text;
+  
+    // Retrieve the selected values from the dropdowns
+    let timbitsPack = document.getElementById("timbits").options[document.getElementById("timbits").selectedIndex].text;
+    let toppings = document.getElementById("toppings").selectedOptions;
+    let secondToppings = document.getElementById("Secondtoppings").selectedOptions;
+    let coffeeSize = document.getElementById("coffee").options[document.getElementById("coffee").selectedIndex].text;
 
-	// Create a summary of the order
-	let summary = "<li>" + timbits + " Timbits with " + toppings + "<br>" + Secondtoppings + "</li>";
-	summary += "<li>" + coffee + "</li>";
+    // Create the order summary
+    let orderSummary = "Timbits Pack: " + timbitsPack + "\n";
+    orderSummary += "Toppings: ";
+    for (let i = 0; i < toppings.length; i++) {
+        orderSummary += toppings[i].text + ", ";
+    }
+    for (let j = 0; j < secondToppings.length; j++) {
+        orderSummary += secondToppings[j].text + ", ";
+    }
+    orderSummary = orderSummary.slice(0, -2); // Remove the last comma and space
+    orderSummary += "\n";
+    orderSummary += "Coffee Size: " + coffeeSize;
 
-	// Update the display
-	document.getElementById("summary").innerHTML = summary;
+    // Display the order summary
+    document.getElementById("summary").textContent = orderSummary;
 }
