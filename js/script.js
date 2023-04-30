@@ -10,6 +10,7 @@
  * This function displays what the user has ordered and the total cost
  */
    function calculateTotal() {
+     
     // Retrieve the selected values from the dropdowns
     let timbitsPrice = parseFloat(document.getElementById("timbits").value);
     let coffeePrice = parseFloat(document.getElementById("coffee").value);
