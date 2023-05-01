@@ -62,11 +62,13 @@
 
   <!--Area for user to enter order-->
     <label for="timbits">Timbits pack:</label>
-    <select id="timbits" onchange="calculateTotal()">
-        <option value="3.19">10 pack ($3.19)</option>
-        <option value="4.99">20 pack ($4.99)</option>
-        <option value="9.99">50 pack ($9.99)</option>
-    </select>
+<select id="timbits" onchange="calculateTotal()">
+<option value="" selected disabled>Please select a size</option>
+    <option value="3.19">10 pack ($3.19)</option>
+    <option value="4.99">20 pack ($4.99)</option>
+    <option value="9.99">50 pack ($9.99)</option>
+</select>
+
 
     <br><br>
 
@@ -89,6 +91,7 @@
 
     <label for="coffee">Coffee size:</label>
     <select id="coffee" onchange="calculateTotal()">
+    <option value="" selected disabled>Please select a size</option>
         <option value="1.59">Small coffee ($1.59)</option>
         <option value="1.79">Medium coffee ($1.79)</option>
         <option value="1.99">Large coffee ($1.99)</option>
